@@ -15,13 +15,13 @@ public class PageController {
 		return "hello";
 	}
 	
-	@RequestMapping("/greeting")
+	/*@RequestMapping("/greeting")
 	public String greeting(@RequestParam(value="name", required=false, defaultValue="dunia") String name, Model model) {
 		model.addAttribute("name", name);
 		return "greeting";
-	}
+	} */
 	
-	/*@RequestMapping(value = {"/greeting", "greeting/{name}"})
+	@RequestMapping(value = {"/greeting", "greeting/{name}"})
 	public String greetingPath(@PathVariable Optional<String> name, Model model) {
 		if(name.isPresent()) {
 			model.addAttribute("name", name.get());
@@ -30,7 +30,7 @@ public class PageController {
 		}
 		
 		return "greeting";
-	}*/
+	}
 	
 	@RequestMapping("/perkalian")
 	public String perkalian(@RequestParam(value="a", required=false, defaultValue="0") int a, @RequestParam(value="b", required=false, defaultValue="0") int b, Model model) { 
